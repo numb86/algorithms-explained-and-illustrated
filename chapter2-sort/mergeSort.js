@@ -24,6 +24,7 @@ function main(input) {
   }
 
   function loop(container) {
+    if (container.length === 0) return container;
     const processedContainer = [];
     for (let i = 0; i < container.length - 1; i += 2) {
       processedContainer.push(merge(container[i], container[i + 1]));
@@ -39,6 +40,18 @@ function main(input) {
   return loop(input.map(elem => [elem]));
 }
 
-const target = [1, 5, 6, 1, 7, 6, 2, 3];
+let target = [];
+console.log(`<< ${target}`);
+console.log(`>> ${main(target)}`);
+
+target = [3];
+console.log(`<< ${target}`);
+console.log(`>> ${main(target)}`);
+
+target = [3, 1, 2];
+console.log(`<< ${target}`);
+console.log(`>> ${main(target)}`);
+
+target = [1, 5, 6, 1, 7, 6, 2, 3];
 console.log(`<< ${target}`);
 console.log(`>> ${main(target)}`);
